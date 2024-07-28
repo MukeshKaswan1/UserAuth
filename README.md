@@ -16,7 +16,7 @@ SQL or MongoDB - Database
 
 Clone the repository:
 
-git clone https://github.com/your-username/user-authentication-system.git
+git clone https: https://github.com/MukeshKaswan1/UserAuth.git
 
 Install dependencies:
 
@@ -25,9 +25,13 @@ npm install
 ### Configure environment variables:
 
 Create a .env file in the root directory
+
 Add the following variables:
+
 PORT=3000
+
 DB_URI=your_database_uri
+
 JWT_SECRET=your_jwt_secret
 
 ### Running the Application
