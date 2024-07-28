@@ -118,6 +118,7 @@ router.post('/login', async (req, res) => {
 router.post('/generateOTP', async (req, res) => {
     const { email } = req.body
     const user = await Signup.findOne({ email: email });
+    console.log(user);
     if (user) {
         OTP = await otpGenerator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false })
         console.log(OTP)

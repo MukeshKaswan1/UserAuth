@@ -213,26 +213,6 @@ const Signup = () => {
                   />
                   <button onClick={handlesubmit}>Sign Up</button>
 
-                  {/* <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      gap: "1rem",
-                      alignItems: "center",
-                    }}
-                  >
-                    <span style={{ fontSize: "1rem" }}>
-                      Reset Your Password{" "}
-                    </span>
-                    <a
-                      onClick={() => {
-                        setReset(true);
-                      }}
-                      style={{ color: "blue", cursor: "pointer" }}
-                    >
-                      click here
-                    </a>
-                  </div> */}
                 </>
               ) : (
                 ""
@@ -240,20 +220,7 @@ const Signup = () => {
             </form>
           </div>
 
-          {/* <div class="form-container sign-in-container">
-            <form>
-              <h1>Login</h1>
-
-              <div>
-                <input type="email" name='email' value={getdata.email} placeholder="Email" onChange={setGet} />
-                <input type="password" name='password' value={getdata.password} placeholder="Password" onChange={setGet} />
-              </div>
-
-              <a href="#">Forgot your password?</a>
-              <button onClick={handlelogin} >Login</button>
-            </form>
-          </div> */}
-
+          
           <div className="form-container sign-in-container">
             <form>
               {!reset ? (
@@ -285,17 +252,19 @@ const Signup = () => {
                 </>
               ) : (
                 <>
-                  <h3 className="my-4">Reset Password</h3>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    value={resetData.email}
-                    onChange={setval}
-                  />
-                  <button className="my-4" onClick={ResetPassword}>
-                    Send OTP
-                  </button>
+                  {/* <div className="sendOtp"> */}
+                    <h3 className="my-4">Reset Password</h3>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      value={resetData.email}
+                      onChange={setval}
+                    />
+                    <button className="my-4" onClick={ResetPassword}>
+                      Send OTP
+                    </button>
+                  {/* </div> */}
                 </>
               )}
             </form>
