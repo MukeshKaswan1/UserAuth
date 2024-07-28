@@ -1,0 +1,91 @@
+import React, { useEffect, useState } from 'react'
+import './Navbar.css'
+import { FaAngleDoubleRight } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { BsFillPersonFill } from 'react-icons/bs';
+import pic from "../../image/hero-banner.png"
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+
+    const port = "http://localhost:3000"
+
+    const [user, setUser] = useState()
+    const [isActive, setActive] = useState("false");
+    const open = () => {
+        setActive(!isActive);
+    };
+
+    const handleUsers = async () => {
+        const data = await fetch(`${port}/user`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "token": localStorage.getItem('token')
+            },
+        })
+        const json = await data.json()
+        setUser(json)
+    }
+
+    useEffect(() => {
+        handleUsers()
+    }, [setUser])
+
+    return (
+        <>
+            <header>
+                <div class="container">
+                    <a href="#" class="logo">
+                        <span>User Authentication </span>
+                    </a>
+                    <div class="navbar-wrapper">
+                        <button class="navbar-menu-btn" onClick={open}>
+                            <GiHamburgerMenu />
+                        </button>
+
+                        <nav className={isActive ? "navbar" : " navbar  active"}>
+                            <ul class="navbar-list align-center " >
+                                <li class="nav-item d-flex  flex-row align-items-center ">
+                                    <a href="" class="nav-link" style={{fontSize:"2.5rem", color:" hsl(2, 100%, 69%)" }} ><BsFillPersonFill/></a>
+                                    {user?.map((item)=>{
+                                        return(                                           
+                                            <a href="#home" class="nav-link" style={{fontSize:"1rem", paddingTop:"1rem" }} > Hi, {item.fname} </a>
+                                        )
+                                    })}
+                                </li>
+                            </ul>
+                            <Link class="btn" to={'/'}  >Logout</Link>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main>
+
+                <article>
+
+                    <section class="hero" id="home">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h1 class="h1 hero-title">You have Logged Succesfully</h1>
+
+                            </div>
+
+                            <div class="hero-banner"></div>
+
+                        </div>
+
+                        <div  className='images '>
+                        <img src={pic} alt="shape" class="shape-content" />
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+
+        </>
+    )
+}
+
+export default Navbar
