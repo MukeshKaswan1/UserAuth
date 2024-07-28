@@ -65,7 +65,7 @@ const ResetPassword = () => {
           >
             <div
               style={{
-                backgroundColor: "lightpink",
+                backgroundColor: "rgb(255, 153, 178)", 
                 width: "30%",
                 padding: "5rem 0",
                 borderRadius: "0.5rem",
@@ -138,7 +138,7 @@ const ResetPassword = () => {
           >
             <div
               style={{
-                backgroundColor: "lightpink",
+                backgroundColor: "rgb(255, 153, 178)",
                 width: "30%",
                 padding: "5rem 0",
                 borderRadius: "0.5rem",
