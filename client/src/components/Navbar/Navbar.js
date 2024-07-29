@@ -17,7 +17,7 @@ const Navbar = () => {
     };
 
     const handleUsers = async () => {
-        const data = await fetch(`${port}/users`, {
+        const data = await fetch(`${port}/user`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
