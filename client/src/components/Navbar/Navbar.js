@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const port = "http://localhost:3000"
+    const port = "http://localhost:5000"
 
     const [user, setUser] = useState()
     const [isActive, setActive] = useState("false");
@@ -17,7 +17,7 @@ const Navbar = () => {
     };
 
     const handleUsers = async () => {
-        const data = await fetch(`${port}/user`, {
+        const data = await fetch(`${port}/users`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
