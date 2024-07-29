@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const port = "http://localhost:5000"
+    const port = "https://userauth-mvxp.onrender.com"
 
     const [user, setUser] = useState()
     const [isActive, setActive] = useState("false");

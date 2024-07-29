@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const ResetPassword = () => {
-  const port = "http://localhost:5000";
+  const port = "https://userauth-mvxp.onrender.com";
   const [otp, setOtp] = useState({});
   const [pass, setPass] = useState({ password: "", cpassword: "" });
   const localOtp = localStorage.getItem("otp");

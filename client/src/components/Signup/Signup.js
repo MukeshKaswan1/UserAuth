@@ -4,7 +4,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const port = "http://localhost:5000";
+  const port = "https://userauth-mvxp.onrender.com";
   const navigate = useNavigate();
 
   const [reset, setReset] = useState(false);
